@@ -23,9 +23,7 @@ jobs:
 
     - name: Build book
       run: |
-        nix-env -iA mdbook -f '<nixpkgs>'
-        mdbook build
-
+        nix-shell -p mdbook --run "mdbook build"
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
